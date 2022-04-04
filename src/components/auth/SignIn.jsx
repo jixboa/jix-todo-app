@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-import { toast } from "react-toastify";
-
 import { signIn } from "../../store/actions/authAction";
 
 import { Typography, TextField, Button } from "@material-ui/core";
@@ -23,7 +21,7 @@ const useStyle = makeStyles({
 
 const SignIn = () => {
   const classes = useStyle();
-  const auth = useSelector(state => state.auth)
+  const auth = useSelector((state) => state.auth);
   const [creds, setCreds] = useState({
     email: "",
     password: "",
@@ -34,14 +32,13 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(signIn(creds));
 
-    
     setCreds({
-        email: "",
-        password: "",
+      email: "",
+      password: "",
     });
-};
+  };
 
-if (auth._id) return <Navigate to="/" />;
+  if (auth._id) return <Navigate to="/" />;
   return (
     <>
       <form

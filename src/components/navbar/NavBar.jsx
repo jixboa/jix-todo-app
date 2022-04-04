@@ -24,7 +24,6 @@ const useStyle = makeStyles({
 
 const NavBar = () => {
   const classes = useStyle();
-  const state = useSelector((state) => state);
   const auth = useSelector((state) => state.auth);
 
   // console.log(state)
