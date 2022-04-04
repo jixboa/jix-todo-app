@@ -27,7 +27,6 @@ const authReducer = (state = initialState, action) => {
 
     case "SIGN_OUT":
       localStorage.removeItem("token");
-      toast("Goodbye", { position: toast.POSITION.TOP_CENTER });
       return {
         token: null,
         name: null,
