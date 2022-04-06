@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 import { signIn } from "../../store/actions/authAction";
 
@@ -16,6 +16,13 @@ const useStyle = makeStyles({
   },
   spacing: {
     marginTop: "20px",
+  },
+  root: {
+    flexGrow: 1,
+  },
+  linkStyle: {
+    color: "#000000",
+    textDecoration: "none",
   },
 });
 
@@ -72,6 +79,15 @@ const SignIn = () => {
           color="primary"
           type="submit">
           Sign In
+        </Button>
+        <Button
+          className={classes.spacing}
+          variant="text"
+          color="primary"
+          size="small">
+          <Link to="/signup" className={classes.linkStyle}>
+            OR Sign Up
+          </Link>
         </Button>
       </form>
     </>
