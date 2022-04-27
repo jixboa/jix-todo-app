@@ -5,13 +5,7 @@ import { Link, Navigate } from "react-router-dom";
 
 import { signIn } from "../../store/actions/authAction";
 
-import {
-  Typography,
-  TextField,
-  Button,
-  Backdrop,
-  CircularProgress,
-} from "@material-ui/core";
+import { Typography, TextField, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyle = makeStyles({
