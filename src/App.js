@@ -32,7 +32,7 @@ function App() {
       <BrowserRouter>
         <ToastContainer />
 
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <NavBar />
           <Container className={classes.contentStyle} maxWidth="sm">
             <Routes>

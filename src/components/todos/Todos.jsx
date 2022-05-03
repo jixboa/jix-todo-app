@@ -3,7 +3,7 @@ import AddTodo from "./AddTodo";
 import ListTodos from "./ListTodos";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import ClipLoader from "react-spinners/ClipLoader";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 const Todos = () => {
   const auth = useSelector((state) => state.auth);
@@ -19,7 +19,7 @@ const Todos = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3000);
   }, []);
 
   if (!auth._id) return <Navigate to="/signin" />;
@@ -27,7 +27,7 @@ const Todos = () => {
   return (
     <>
       {loading ? (
-        <ClipLoader color={"#31CFB1"} loading={loading} size={100} />
+        <PropagateLoader color={"#31CFB1"} loading={loading} size={15} />
       ) : (
         <>
           <AddTodo todo={todo} setTodo={setTodo} />
