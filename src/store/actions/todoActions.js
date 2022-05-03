@@ -38,6 +38,21 @@ export const addTodo = (newTodo) => {
           position: toast.POSITION.TOP_CENTER,
         });
       });
+
+    API()
+      .post("/completedtodos", newTodo, setHeaders())
+      .then((todo) => {
+        dispatch({
+          type: "ADD_TODO",
+          todo,
+        });
+      })
+      .catch((error) => {
+        console.log(error.response);
+        toast.error(error.response?.data, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      });
   };
 };
 
