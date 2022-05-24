@@ -39,7 +39,7 @@ export const addTodo = (newTodo) => {
         });
       });
 
-    API()
+    /* API()
       .post("/completedtodos", newTodo, setHeaders())
       .then((todo) => {
         dispatch({
@@ -52,7 +52,7 @@ export const addTodo = (newTodo) => {
         toast.error(error.response?.data, {
           position: toast.POSITION.TOP_CENTER,
         });
-      });
+      }); */
   };
 };
 
