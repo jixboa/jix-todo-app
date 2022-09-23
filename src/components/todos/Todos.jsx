@@ -22,8 +22,6 @@ const Todos = () => {
     }, 3000);
   }, []);
 
-  if (!auth._id) return <Navigate to="/signin" />;
-
   return (
     <>
       {loading ? (
@@ -31,7 +29,7 @@ const Todos = () => {
       ) : (
         <>
           <AddTodo todo={todo} setTodo={setTodo} />
-          <ListTodos setTodo={setTodo} />
+          {/* <ListTodos setTodo={setTodo} /> */}
         </>
       )}
     </>

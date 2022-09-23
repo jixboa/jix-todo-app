@@ -16,8 +16,15 @@ const useStyle = makeStyles({
   root: {
     flexGrow: 1,
   },
+  appbarStyle: {
+    color: "#15710c",
+  },
+
   linkStyle: {
     color: "#fafafa",
+    textDecoration: "none",
+  },
+  a: {
     textDecoration: "none",
   },
 });
@@ -38,39 +45,13 @@ const NavBar = () => {
   };
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appbarStyle}>
         <Toolbar>
           <Typography variant="h4" className={classes.root}>
             <Link className={classes.linkStyle} to="/">
-              Todo App
+              GAP Ghana Card Upload
             </Link>
           </Typography>
-          {auth._id ? (
-            <>
-              <Typography variant="subtitle2" className={classes.root}>
-                logged in as: {auth.name}
-              </Typography>
-              <Button
-                variant="text"
-                color="inherit"
-                onClick={() => HandleSignOut()}>
-                SignOut
-              </Button>
-            </>
-          ) : (
-            <>
-              <Button variant="text" color="inherit">
-                <Link className={classes.linkStyle} to="/signin">
-                  SignIn
-                </Link>
-              </Button>
-              <Button variant="text" color="inherit">
-                <Link className={classes.linkStyle} to="/signup">
-                  SignUp
-                </Link>
-              </Button>
-            </>
-          )}
         </Toolbar>
       </AppBar>
       {/* <Button variant="contained">Hello World</Button> */}
